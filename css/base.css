@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: rgb(172, 170, 170);
+}
+
+body{
+    font-family: 'Krona One', sans-serif;
+}
+
+header{
+    background-color: var(--primary-color);
+    height: 10vh;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.container-main{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.crypto, .coin{
+    background-color: var(--primary-color);
+    height: 460px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.input-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.btn-att{
+    height: 30px;
+    width: 70px;
+}
