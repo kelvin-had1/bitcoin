@@ -6,7 +6,7 @@ const div = document.querySelector('.coin')
 request.open('GET', url, true)
 request.onreadystatechange = function(){
     let response = JSON.parse(request.responseText)
-    let USDBRL = parseFloat(response['USDBRL']['bid']).toFixed(2).replace(',','.')
+    let USDBRL = parseFloat(response['USDBRL']['bid']).toFixed(2).replace('.',',')
         
     let USDTime = new Date(response['USDBRL']['timestamp']*1000)
     let hours = USDTime.getHours()
