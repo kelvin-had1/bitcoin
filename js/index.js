@@ -1,5 +1,7 @@
 const btnAtualizar = document.querySelector('.btn-att')
 
+
+//ATUALIZAR DIV CRYPTO
 btnAtualizar.addEventListener('click', ()=>{
     let btnCrypto = document.querySelector('.btn-crypto').value.split(' ')
 
@@ -40,4 +42,33 @@ btnAtualizar.addEventListener('click', ()=>{
     
 }) 
 
+//ATUALIZAR DIV MOEDAS
 
+btnAtualizar.addEventListener('click', _ => {
+    const request = new XMLHttpRequest()
+    let btnCoins = document.querySelector('.btn-coins').value.split(' ')
+    let newPath = `https://economia.awesomeapi.com.br/last/${btnCoins[0]}-BRL`
+    
+    request.open('GET', newPath, true)
+    request.onreadystatechange = function(){
+        let response = JSON.parse(request.responseText)
+
+        let coin = parseFloat(response[`${btnCoins[0]}BRL`]['bid']).toFixed(2).replace('.',',')
+        let coinTime = new Date(response[`${btnCoins[0]}BRL`]['timestamp']*1000)
+        
+        let hours = coinTime.getHours()
+        let minutes = coinTime.getMinutes()
+        let seconds = coinTime.getSeconds()
+        let coinHorario = `${hours}:${minutes}:${seconds}`
+        
+        let contentDivCoin = `<h1>${btnCoins[1]}</h1>
+        <p>${btnCoins[1]} em real: <br> R$ ${coin}</p>
+        <p>Horário da informação: <br> ${coinHorario} - ${coinTime.toLocaleDateString("pt-BR")}</p>`
+
+        divCoin.innerHTML = contentDivCoin
+
+
+    }
+
+    request.send()
+})

@@ -1,7 +1,7 @@
-const url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-USD"
+const url = "https://economia.awesomeapi.com.br/last/USD-BRL"
 let request = new XMLHttpRequest()
 
-const div = document.querySelector('.coin')
+const divCoin = document.querySelector('.coin')
 
 request.open('GET', url, true)
 request.onreadystatechange = function(){
@@ -20,7 +20,7 @@ request.onreadystatechange = function(){
     <p>Dólar em real: <br> R$ ${USDBRL}</p>
     <p>Horário da informação: <br> ${USDHorario} - ${USDTime.toLocaleDateString("pt-BR")}</p>`
 
-    div.innerHTML = contentdiv
+    divCoin.innerHTML = contentdiv
 }
 
 
