@@ -31,12 +31,8 @@ requestCrypto.onreadystatechange = function(){
 
     divCrypto.innerHTML = cryptoContent
 
- 
-    
     
 }
 requestCrypto.send()
-
-
 
 
