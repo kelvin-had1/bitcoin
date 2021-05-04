@@ -28,13 +28,25 @@ btnAtualizar.addEventListener('click', ()=>{
         let CryptoTime = `${hours}:${minutes}:${seconds}`
         
         
-        const cryptoContent2 = `<h1>${crypto.name}</h1>
-        <p>Menor preço:<br> R$ ${crypto.low.slice(0, -6).replace('.', ',')}</p>
-        <p>Maior preço:<br> R$ ${crypto.high.slice(0, -6).replace('.', ',')}</p>
-        <p>Valor da última negociação:<br> R$ ${crypto.last.slice(0, -6).replace('.', ',')}</p>
-        <p>Horário da informação: <br> ${CryptoTime} - ${Cryptodate.toLocaleDateString("pt-BR")}
-        </p>`    
+        const cryptoContent2 = `
+        <div>
+                <select class="btn-crypto">
+                    <option selected>${crypto.name}</option>
+                    <option>---------------</option>
+
+                    <option value="BTC Bitcoin">Bitcoin</option>
+                    <option value="ETH Ethereum">Ethereum</option>
+                    <option value="CHZ Chiliz">Chiliz</option>
+                </select>
+            </div>
+        <p>Menor preço: <button>R$ ${crypto.low.slice(0, -6).replace('.', ',')}</button></p>
+        <p>Maior preço: <button>R$ ${crypto.high.slice(0, -6).replace('.', ',')}</button></p>
+        <p>Valor da última negociação: </p>
         
+        <div>
+            <button>R$ ${crypto.last.slice(0, -6).replace('.', ',')}</button>
+        </div>`    
+
         divCrypto.innerHTML = cryptoContent2
     }
 

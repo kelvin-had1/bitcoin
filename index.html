@@ -9,46 +9,46 @@
     <link rel="stylesheet" type="text/css" href="./css/base.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="./css/select.css">
+
 </head>
 <body>
-    <header>
-        <h1>Criptomoedas</h1>
-    </header>
     
-    <div class="input-select">
-        <select class="btn-crypto">
-            <option value="BTC Bitcoin" selected>Bitcoin</option>
-            <option value="ETH Ethereum">Ethereum</option>
-            <option value="CHZ Chiliz">Chiliz</option>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Cotação</a></li>
+                <li><a href="#">O que são criptomoedas?</a></li>
+                <li><a href="#">O que é câmbio?</a></li>
+                <li><a href="#">Onde comprar criptomoedas?</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        </select>
-
-            <input class="btn-att" type="button" value="Atualizar">
-
-        <select class="btn-coins">
-            <option value="USD Dólar" selected>Dólar</option>
-            <option value="EUR Euro" >Euro</option>
-
-
-
-        </select>
-    </div>
-
-    <section class="container-main">
-
+    <section class="main-section">
         <div class="crypto">
             
+            
+            
+
         </div>
 
         <div class="coin">
-            
+            <div>
+                <select class="btn-coins">
+                    <option value="USD Dólar" selected>Dólar</option>
+                    <option value="EUR Euro" >Euro</option>
+                </select>
+            </div>
 
         </div>
     </section>
+    <input class="btn-att" type="button" value="Atualizar">
     
+
 <script src="./js/crypto.js"></script>
 <script src="./js/coins.js"></script>
 <script src="./js/index.js"></script>
-
 </body>
 </html>

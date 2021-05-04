@@ -1,5 +1,6 @@
 const APICrypto = 'https://www.mercadobitcoin.net/api/BTC/ticker'
 const divCrypto = document.querySelector('.crypto')
+const newDivCrypto = document.querySelector('.crypto-container')
 let bitcoin = {}
 
 let requestCrypto = new XMLHttpRequest()
@@ -19,19 +20,24 @@ requestCrypto.onreadystatechange = function(){
     let minutes = BTCdate.getMinutes()
     let seconds = BTCdate.getSeconds()
     let BTCTime = `${hours}:${minutes}:${seconds}`
-    
-    
-    const cryptoContent = `<h1>Bitcoin</h1>
-    <p>Menor preço:<br> R$ ${bitcoin.low}</p>
-    <p>Maior preço:<br> R$ ${bitcoin.high}</p>
-    <p>Valor da última negociação:<br> R$ ${bitcoin.last}</p>
-    <p>Horário da informação: <br> ${BTCTime} - ${BTCdate.toLocaleDateString("pt-BR")}
-    </p>`
-   
+      
+    const cryptoContent = `<div>
+    <select class="btn-crypto">
+        <option value="BTC Bitcoin" selected>Bitcoin</option>
+        <option value="ETH Ethereum">Ethereum</option>
+        <option value="CHZ Chiliz">Chiliz</option>
+    </select>
+</div>
+            <p>Menor preço: <button>R$ ${bitcoin.low}</button></p>
+            <p>Maior preço: <button>R$ ${bitcoin.high}</button></p>
+            <p>Valor da última negociação: </p>
+            
+            <div>
+                <button>R$ ${bitcoin.last}</button>
+            </div>`
 
     divCrypto.innerHTML = cryptoContent
 
-    
 }
 requestCrypto.send()
 
