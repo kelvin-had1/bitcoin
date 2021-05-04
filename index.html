@@ -9,19 +9,25 @@
     <link rel="stylesheet" type="text/css" href="./css/base.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" type="text/css" href="./css/menu.css">
     <link rel="stylesheet" type="text/css" href="./css/select.css">
 
 </head>
 <body>
     
     <header>
-        <nav class="menu">
-            <ul>
-                <li><a href="#">Cotação</a></li>
-                <li><a href="#">O que são criptomoedas?</a></li>
-                <li><a href="#">O que é câmbio?</a></li>
-                <li><a href="#">Onde comprar criptomoedas?</a></li>
+        <nav class="wrap-menu">
+            <a href="#menu" id="btnMenu" class="btnMenu btnMenu_open">Menu</a>
+            
+
+    
+            <ul id="menu" class="menu">
+                <a href="#menu" id="btnMenu" class="btnMenu btnMenu_close">Sair</a>
+                <li class="menu-item"><a href="#">Cotação</a></li>
+                <li class="menu-item"><a href="#">O que são criptomoedas?</a></li>
+                <li class="menu-item"><a href="#">O que é câmbio?</a></li>
+                <li class="menu-item"><a href="#">Onde comprar criptomoedas?</a></li>
+
             </ul>
         </nav>
     </header>
@@ -45,5 +51,6 @@
 <script src="./js/crypto.js"></script>
 <script src="./js/coins.js"></script>
 <script src="./js/index.js"></script>
+<script src="./js/menu.js"></script>
 </body>
 </html>
