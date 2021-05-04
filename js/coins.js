@@ -16,13 +16,26 @@ request.onreadystatechange = function(){
         
         
 
-    let contentdiv = `<h1>Dólar</h1>
-    <p>Dólar em real: <br> R$ ${USDBRL}</p>
-    <p>Horário da informação: <br> ${USDHorario} - ${USDTime.toLocaleDateString("pt-BR")}</p>`
+    let contentdiv = `<div>
+    <select class="btn-coins">
+        <option value="USD Dólar" selected>Dólar</option>
+        <option value="EUR Euro" >Euro</option>
+    </select>
+</div>
+
+<p>Dólar em real: <button>R$ ${USDBRL}</button></p>
+<p>Horário da informação:</p>
+
+
+<div>
+<button class="data-coins"> ${USDHorario} - ${USDTime.toLocaleDateString("pt-BR")}</button>
+</div>
+
+</div>`
 
     divCoin.innerHTML = contentdiv
 }
-
+    
 
 
 request.send()

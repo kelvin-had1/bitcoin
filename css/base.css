@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    --btn-color: #E8F0F2;
+}
+
 body{
     background-image: url('../img/fundo.png');
     background-repeat: no-repeat;

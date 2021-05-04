@@ -31,7 +31,7 @@ btnAtualizar.addEventListener('click', ()=>{
         const cryptoContent2 = `
         <div>
                 <select class="btn-crypto">
-                    <option selected>${crypto.name}</option>
+                    <option value="${btnCrypto[0]} ${crypto.name}" selected>${crypto.name}</option>
                     <option>---------------</option>
 
                     <option value="BTC Bitcoin">Bitcoin</option>
@@ -73,12 +73,23 @@ btnAtualizar.addEventListener('click', _ => {
         let seconds = coinTime.getSeconds()
         let coinHorario = `${hours}:${minutes}:${seconds}`
         
-        let contentDivCoin = `<h1>${btnCoins[1]}</h1>
-        <p>${btnCoins[1]} em real: <br> R$ ${coin}</p>
-        <p>Horário da informação: <br> ${coinHorario} - ${coinTime.toLocaleDateString("pt-BR")}</p>`
+        let contentDivCoin = `<div>
+        <select class="btn-coins">
+            <option value="${btnCoins[0]} ${btnCoins[1]}" selected>${btnCoins[1]}</option>
+            <option>---------------</option>
+            <option value="USD Dólar">Dólar</option>
+            <option value="EUR Euro">Euro</option>
+        </select>
+    </div>
+    <p>${btnCoins[1]} em real: <button>R$ ${coin}</button></p>
+    <p>Horário da informação:</p>
+    <div>
+    <button class="data-coins"> ${coinHorario} - ${coinTime.toLocaleDateString("pt-BR")}</button>
+    </div>
+    </div>`
 
         divCoin.innerHTML = contentDivCoin
-
+        
 
     }
 
