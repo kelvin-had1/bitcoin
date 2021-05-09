@@ -19,7 +19,8 @@
         display: inline;
         margin-top: 0;
         padding: 0px 0px;
-        
+        height: 100%;
+        z-index: 1;
     }
 
     .menu{
